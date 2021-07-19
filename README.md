@@ -1,1 +1,1 @@
-#link demo: https://hama05.github.io/PriceTable/
+# Link demo: https://hama05.github.io/PriceTable/
