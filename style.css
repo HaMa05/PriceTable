@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -236,4 +236,77 @@ body {
 
 .price:nth-child(3) .btn-line {
     color: var(--third);
+}
+
+@media screen and (max-width: 769px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .price {
+        height: 600px;
+    }
+
+    .price-background {
+        height: 20rem;
+    }
+
+    .price:not(:last-child) {
+        margin-right: 2rem;
+    }
+
+    .price-background-title {
+        font-size: 3rem;
+    }
+
+    .price-circle {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .price-details-title .lg-title {
+        font-size: 2rem;
+    }
+
+    .price-details-title .sm-title {
+        font-size: 1rem;
+    }
+
+    .price-details-text .text {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    .btn {
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    .btn span {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .container {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 7rem;
+    }
+
+    .container .price {
+        margin: 0;
+    }
+
+    .price-new {
+        width: 5rem;
+        height: 5rem;
+        left: -0.8rem;
+    }
+
+    .price-new::before {
+        background-size: 90%;
+    }
+
 }
