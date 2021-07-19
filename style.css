@@ -22,7 +22,6 @@ body {
 
 .container {
     min-height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,8 +29,9 @@ body {
 }
 
 .price {
-    width: 362px;
-    height: 770px;
+    max-width: 362px;
+    width: calc(100% - 20px);
+    max-height: 770px;
     position: relative;
 }
 
@@ -57,7 +57,6 @@ body {
 
 .price-count {
     color: var(--primary);
-    ;
     font-size: 3rem;
     font-weight: normal;
     margin-bottom: 0.5rem;
@@ -103,7 +102,8 @@ body {
     background-image: url("./images/newmark.png");
     background-repeat: no-repeat;
     z-index: 2;
-    background-position: center center;
+    background-size: cover;
+    /* background-position: center center; */
 }
 
 .overlay {
@@ -142,6 +142,7 @@ body {
     height: 100%;
     background-image: url("./images/ocean.png");
     background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
 }
 
@@ -200,7 +201,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    margin: 5.5rem 0;
     padding: 0.8rem 3.5rem;
     transition: all 0.2s linear;
     cursor: pointer;
@@ -231,6 +232,8 @@ body {
 
 .price:nth-child(2) .price-background::before {
     background-image: url("./images/mountain.png");
+    background-size: cover;
+
 }
 
 .price:nth-child(2) .price-circle {
@@ -248,6 +251,7 @@ body {
 
 .price:nth-child(3) .price-background::before {
     background-image: url("./images/forest.png");
+    background-size: cover;
 }
 
 .price:nth-child(3) .price-count {
@@ -257,230 +261,42 @@ body {
 .price:nth-child(3) .btn-line {
     color: var(--third);
 }
-@media screen and (max-width: 1219px) {
-    .container {
-        padding: 10rem 0 10rem 0;
-    }
-    .price {
-        width: 30%;
-        padding: 0;
-    }
 
-    .price:not(:last-child) {
-        margin-right: 3rem;
+@media screen and (max-width: 1219px) {
+    html {
+        font-size: 50%;
     }
 }
 
 @media screen and (max-width: 991px) {
-    .container {
-        padding: 10rem 0 10rem 0;
+    html {
+        font-size: 40%;
     }
-
-    .price {
-        width: 31%;
-        height: 70rem;
-        padding: 0;
-    }
-
-    .price:not(:last-child) {
-        margin-right: 2rem;
-    }
-
-    .price-background {
-        height: 23rem;
-    }
-
-    .price-details {
-        height: calc(100% - 23rem);
-    }
-
-    .price-details-title .sm-title {
-        font-size: 1.2rem;
-    }
-
-    .price-background-title {
-        font-size: 3.2rem;
-    }
-
-    .btn {
-        margin: 4rem;
-    }
-
-    .btn span {
-        font-size: 1.8rem;
-    }
-
 }
 
 @media screen and (max-width: 767px) {
-    .price {
-        width: 32%;
-        height: 50rem;
-        padding: 0;
-    }
-
-    .price:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    .price-background {
-        height: 15rem;
-    }
-
-    .price-details {
-        height: calc(100% - 15rem);
-    }
-
-    .price-details-title .sm-title {
-        font-size: 1rem;
-    }
-
-    .price-background-title {
-        font-size: 2.5rem;
-    }
-
-    .price-background-text {
-        font-size: 1rem;
-    }
-
-    .price-background::before {
-        background-position: center;
-    }
-
-    .price-circle {
-        width: 6rem;
-        height: 6rem;
-        top: -3rem
-    }
-
-    .price-count {
-        font-size: 2rem;
-        margin: 0;
-    }
-
-    .price-per {
-        font-size: 1rem;
-    }
-
-    .price-new {
-        width: 4rem;
-        height: 4rem;
-        left: -1rem;
-        top: -1rem;
-        display: flex;
-    }
-
-    .price-new span {
-        font-size: 0.8rem;
-    }
-
-    .price-new::before {
-        background-size: 90%;
-        background-size: cover;
-    }
-
-    .price-details-title {
-        padding: 1.2rem;
-    }
-
-    .price-details-title .lg-title{
-        font-size: 2rem;
-    }
-
-    .price-details-title .sm-title{
-        font-size: 0.7rem;
-    }
-
-    .price-details-text .text {
-        font-size: 1.5rem;
-        padding: 1rem;
-    }
-
-    .btn {
-        margin: 2.8rem;
-    }
-
-    .btn span {
-        font-size: 1.5rem;
-    }
-
+    html {
+        font-size: 30%;
+    } 
 }
 
-
 @media screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-        padding: 10rem 0 10rem 0;
+
+    html {
+        font-size: 60%;
     }
 
-    .container .price {
-        width: 100%;
-        height: 60rem;
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .price:not(:last-child) {
-        margin-bottom: 8rem;
+        margin-right: 0;
     }
 
-    .price-new {
-        width: 5rem;
-        height: 5rem;
-        left: 1rem;
-        top: -2.5rem;
-    }
-    
-    .price-new span {
-        font-size: 1.3rem;
-    }
-
-    .price-circle {
-        width: 9rem;
-        height: 9rem;
-        top: -4.5rem;
-    }
-
-    .price-count {
-        font-size: 3rem;
-    }
-
-    .price-per {
-        font-size: 1.5rem;
-    }
-
-    .price-background-title {
-        font-size: 4rem;
-    }
-
-    .price-background-text {
-        font-size: 1.3rem;
-    }
-    
-    .price-background {
-        height: 20rem;
-    }
-
-    .price-details {
-        height: calc(100% - 20rem);
-    }
-
-    .price-background::before {
-        background-size: cover;
-    }
-
-    .price-details-title {
-        padding: 1.5rem;
-    }
-
-    .price-details-title .lg-title {
-        font-size: 2.4rem;
-    }
-
-    .price-details-title .sm-title {
-        font-size: 1.4rem;
-    }
-
-    .price-details-text .text {
-        padding: 1.3rem;
-        font-size: 1.6rem;
+    .price {
+        margin-top: 7rem;
     }
 }
