@@ -423,10 +423,14 @@ body {
     }
 
     .price-new {
-        width: 7rem;
-        height: 7rem;
-        left: 0rem;
-        top: -3.5rem;
+        width: 5rem;
+        height: 5rem;
+        left: 1rem;
+        top: -2.5rem;
+    }
+    
+    .price-new span {
+        font-size: 1.3rem;
     }
 
     .price-circle {
