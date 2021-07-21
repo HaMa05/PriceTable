@@ -12,12 +12,16 @@ html {
 :root {
     --primary: #2196f7;
     --second: #c0418c;
-    --third: #76c869
+    --third: #76c869;
+    --second-circle: #2c2e3d;
+    --lg-color: #748590;
+    --sm-color: #99a9b5;
+    --detail-text-color: #5f727f;
+    --detail-bg-color: #f4f6f7;
 }
 
 body {
     background-color: gray;
-
 }
 
 .container {
@@ -25,13 +29,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .price {
-    max-width: 362px;
-    width: calc(100% - 20px);
-    max-height: 770px;
+    max-width: 36.2rem;
+    margin-top: 8rem;
+    width: 100%;
     position: relative;
 }
 
@@ -58,16 +62,13 @@ body {
 .price-count {
     color: var(--primary);
     font-size: 3rem;
-    font-weight: normal;
     margin-bottom: 0.5rem;
-    font-family: 'Source Sans Pro';
     font-weight: lighter;
 }
 
 .price-per {
     font-size: 1.6rem;
     color: #99a9b5;
-    font-weight: 400;
 }
 
 .price-new {
@@ -83,27 +84,24 @@ body {
 
 .price-new span {
     text-transform: uppercase;
-    position: absolute;
     color: white;
     z-index: 4;
     font-weight: bold;
     font-size: 1.3rem;
     font-family: 'Montserrat';
-    font-weight: bold;
 }
 
 .price-new::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./images/newmark.png");
+    background-image: url('./images/newmark.png');
     background-repeat: no-repeat;
     z-index: 2;
     background-size: cover;
-    /* background-position: center center; */
 }
 
 .overlay {
@@ -125,22 +123,16 @@ body {
     font-size: 4rem;
     font-family: 'Montserrat';
     font-weight: 200;
-    /* font-weight: normal; */
-}
-
-.price-background-text {
-    font-size: 1.3rem;
-    font-weight: 400;
 }
 
 .price-background::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("./images/ocean.png");
+    background-image: url('./images/ocean.png');
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -150,7 +142,6 @@ body {
     background-color: white;
     height: calc(100% - 27rem);
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     overflow: hidden;
@@ -166,16 +157,15 @@ body {
 .price-details-title .lg-title {
     font-size: 2.4rem;
     font-weight: lighter;
-    color: #748590;
+    color: var(--lg-color);
     padding-bottom: 0.2rem;
 }
 
 .price-details-title .sm-title {
     font-size: 1.4rem;
     font-weight: 400;
-    color: #99a9b5;
+    color: var(--sm-color);
 }
-
 
 .price-details-text {
     display: flex;
@@ -185,7 +175,7 @@ body {
 
 .price-details-text .text {
     display: inline-block;
-    color: #5f727f;
+    color: var(--detail-text-color);
     padding: 1.5rem 0;
     width: 100%;
     text-align: center;
@@ -194,7 +184,7 @@ body {
 }
 
 .price-details-text .text:nth-child(odd) {
-    background-color: #f4f6f7;
+    background-color: var(--detail-bg-color);
 }
 
 .btn {
@@ -212,7 +202,7 @@ body {
 }
 
 .btn-line {
-    border: 1px solid currentColor;
+    border: 0.1rem solid currentColor;
 }
 
 .btn:hover {
@@ -231,13 +221,12 @@ body {
 }
 
 .price:nth-child(2) .price-background::before {
-    background-image: url("./images/mountain.png");
+    background-image: url('./images/mountain.png');
     background-size: cover;
-
 }
 
 .price:nth-child(2) .price-circle {
-    background-color: #2c2e3d;
+    background-color: var(--second-circle);
 }
 
 .price:nth-child(2) .price-count {
@@ -245,12 +234,11 @@ body {
 }
 
 .price:nth-child(2) .btn-line {
-    /* background-color: var(--second); */
     color: var(--second);
 }
 
 .price:nth-child(3) .price-background::before {
-    background-image: url("./images/forest.png");
+    background-image: url('./images/forest.png');
     background-size: cover;
 }
 
@@ -262,41 +250,12 @@ body {
     color: var(--third);
 }
 
-@media screen and (max-width: 1219px) {
-    html {
-        font-size: 50%;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    html {
-        font-size: 40%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    html {
-        font-size: 30%;
-    } 
-}
-
-@media screen and (max-width: 600px) {
-
-    html {
-        font-size: 60%;
-    }
-
+@media screen and (max-width: 796px) {
     .container {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .price:not(:last-child) {
         margin-right: 0;
-    }
-
-    .price {
-        margin-top: 7rem;
     }
 }
