@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Source+Sans+Pro:wght@300;400&display=swap');
+
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'helpers/placeholder';
+
+//components
+@import 'components/base';
+@import 'components/button';
+
+$images: ('mountain' $second $second-circle), ('forest' $third white);
+
+.container {
+    @include flex($justify: center, $wrap: wrap);
+}
+
+.price {
+    max-width: 36.2rem;
+    margin-top: 8rem;
+    width: 100%;
+    @extend %relative;
+    &:not(:last-child) {
+        margin-right: 4rem;
+    }
+
+    &-circle {
+        @include size(12rem, 12rem);
+        border-radius: 50%;
+        background-color: white;
+        @include flex($justify: center, $direction: column);
+        @extend %absolute;
+        top: -6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    &-per {
+        @include font(1.6rem);
+        color: $sm-color;
+    }
+
+    &-count {
+        color: $primary;
+        margin-bottom: 0.5rem;
+        @include font(3rem);
+    }
+
+    &-new {
+        @include size(7rem, 7rem);
+        @extend %absolute;
+        left: -1.5rem;
+        top: -1.5rem;
+        @include flex($justify: center);
+
+        &::before {
+            content: '';
+            @extend %absolute;
+            top: 0;
+            left: 0;
+            @include size(100%, 100%);
+            @include background('newmark');
+            z-index: 2;
+        }
+
+        span {
+            text-transform: uppercase;
+            color: white;
+            z-index: 4;
+            @include font(1.3rem, bold, 'Montserrat');
+        }
+    }
+
+    &-background {
+        @include size(100%, auto);
+        max-height: 27rem;
+        @extend %relative;
+        @include flex(center, $direction: column);
+        color: white;
+        padding: calc(27rem/2) 0;
+
+        &::before {
+            content: '';
+            @extend %absolute;
+            top: 0;
+            left: 0;
+            @include size(100%, 100%);
+            @include background('ocean', no-repeat);
+            z-index: -1;
+        }
+
+        &-title {
+            @include font(4rem, 200, 'Montserrat');
+        }
+    }
+
+    &-details {
+        background-color: white;
+        @include size(100%, auto);
+        @include flex($direction: column);
+        overflow: hidden;
+
+        &-title {
+            @include flex($direction: column);
+            padding: 2.5rem 0;
+
+            .lg-title {
+                @include font($size: 2.4rem);
+                color: $lg-color;
+                padding-bottom: 0.2rem;
+            }
+
+            .sm-title {
+                @include font($size: 1.4rem, $weight: 400);
+                color: $sm-color;
+            }
+        }
+
+        &-text {
+            @include flex($direction: column);
+            @include size(100%, auto);
+
+            span {
+                display: inline-block;
+                color: $detail-text-color;
+                padding: 1.5rem 0;
+                @include size(100%, auto);
+                text-align: center;
+                @include font($size: 1.6rem, $weight: 400);
+
+                &:nth-child(odd) {
+                    background-color: $detail-bg-color;
+                }
+            }
+        }
+    }
+
+    @each $image, $color, $back in $images {
+        $index: index($images, ($image $color $back));
+        &:nth-child(#{$index + 1}) {
+            .price-background::before {
+                @include background($image, no-repeat);
+            }
+
+            .price-circle {
+                background-color: $back;
+            }
+
+            .price-count,
+            .btn-line {
+                color: $color;
+            }
+        }
+    }
+}
+
+.overlay {
+    background-color: rgba(44, 46, 61, 0.5);
+}
+
+@media screen and (max-width: 796px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .price:not(:last-child) {
+        margin-right: 0;
+    }
+}

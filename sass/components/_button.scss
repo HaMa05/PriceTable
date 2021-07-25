@@ -1,0 +1,29 @@
+.btn {
+    @include flex($justify: center);
+    margin: 5rem 0;
+    padding: 0.8rem 3.5rem;
+    transition: all 0.2s linear;
+    @extend %cursor;
+
+    &:hover {
+        background-color: currentColor;
+
+        span {
+            color: white;
+        }
+    }
+
+    span {
+        display: inline-block;
+        text-transform: uppercase;
+        @include font($size: 1.9rem, $weight: 200);
+    }
+
+    &-blue {
+        color: $primary;
+    }
+
+    &-line {
+        border: 0.1rem solid currentColor;
+    }
+}
