@@ -1,50 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Source+Sans+Pro:wght@300;400&display=swap");
 .text-12 {
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 
 .text-14 {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 
 .text-16 {
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 .text-18 {
-  font-size: 1.8rem;
+  font-size: 18px;
 }
 
 .text-20 {
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .text-24 {
-  font-size: 2.4rem;
+  font-size: 24px;
 }
 
 .text-30 {
-  font-size: 3rem;
+  font-size: 30px;
 }
 
 .text-40 {
-  font-size: 4rem;
+  font-size: 40px;
 }
 
 .text-60 {
-  font-size: 6rem;
+  font-size: 60px;
 }
 
 .text-70 {
-  font-size: 7rem;
+  font-size: 70px;
 }
 
 .text-80 {
-  font-size: 8rem;
+  font-size: 80px;
 }
 
 .text-90 {
-  font-size: 9rem;
+  font-size: 90px;
 }
 
 .font-normal {
