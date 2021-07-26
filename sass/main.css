@@ -76,8 +76,6 @@ body {
 .price-circle {
   width: 12rem;
   height: 12rem;
-  border-radius: 50%;
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +83,8 @@ body {
   flex-wrap: nowrap;
   top: -6rem;
   left: 50%;
+  border-radius: 50%;
+  background-color: white;
   transform: translateX(-50%);
   z-index: 2;
 }
@@ -102,8 +102,8 @@ body {
 .price-new {
   width: 7rem;
   height: 7rem;
-  left: -1.5rem;
   top: -1.5rem;
+  left: -1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,24 +123,24 @@ body {
   z-index: 2;
 }
 .price-new span {
-  text-transform: uppercase;
-  color: white;
-  z-index: 4;
   font-size: 1.3rem;
   font-weight: bold;
   font-family: "Montserrat";
+  text-transform: uppercase;
+  color: white;
+  z-index: 4;
 }
 .price-background {
   width: 100%;
   height: auto;
-  max-height: 27rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  max-height: 27rem;
   color: white;
-  padding: calc(27rem/2) 0;
+  padding: calc(27rem / 2) 0;
 }
 .price-background::before {
   content: "";
@@ -160,7 +160,6 @@ body {
   font-family: "Montserrat";
 }
 .price-details {
-  background-color: white;
   width: 100%;
   height: auto;
   display: flex;
@@ -168,6 +167,7 @@ body {
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  background-color: white;
   overflow: hidden;
 }
 .price-details-title {
@@ -199,14 +199,14 @@ body {
   height: auto;
 }
 .price-details-text span {
+  width: 100%;
+  height: auto;
+  font-size: 1.6rem;
+  font-weight: 400;
   display: inline-block;
   color: #5f727f;
   padding: 1.5rem 0;
-  width: 100%;
-  height: auto;
   text-align: center;
-  font-size: 1.6rem;
-  font-weight: 400;
 }
 .price-details-text span:nth-child(odd) {
   background-color: #f4f6f7;

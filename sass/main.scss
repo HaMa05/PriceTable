@@ -8,8 +8,6 @@
 @import 'components/base';
 @import 'components/button';
 
-$images: ('mountain' $second $second-circle), ('forest' $third white);
-
 .container {
     @include flex($justify: center, $wrap: wrap);
 }
@@ -25,12 +23,11 @@ $images: ('mountain' $second $second-circle), ('forest' $third white);
 
     &-circle {
         @include size(12rem, 12rem);
-        border-radius: 50%;
-        background-color: white;
         @include flex($justify: center, $direction: column);
         @extend %absolute;
-        top: -6rem;
-        left: 50%;
+        @include transform-position(-6rem, null, null, 50%);
+        border-radius: 50%;
+        background-color: white;
         transform: translateX(-50%);
         z-index: 2;
     }
@@ -49,41 +46,38 @@ $images: ('mountain' $second $second-circle), ('forest' $third white);
     &-new {
         @include size(7rem, 7rem);
         @extend %absolute;
-        left: -1.5rem;
-        top: -1.5rem;
+        @include transform-position(-1.5rem, null, null, -1.5rem);
         @include flex($justify: center);
 
         &::before {
             content: '';
             @extend %absolute;
-            top: 0;
-            left: 0;
+            @include transform-position(0, null, null, 0);
             @include size(100%, 100%);
             @include background('newmark');
             z-index: 2;
         }
 
         span {
+            @include font(1.3rem, bold, 'Montserrat');
             text-transform: uppercase;
             color: white;
             z-index: 4;
-            @include font(1.3rem, bold, 'Montserrat');
         }
     }
 
     &-background {
         @include size(100%, auto);
-        max-height: 27rem;
         @extend %relative;
         @include flex(center, $direction: column);
+        max-height: 27rem;
         color: white;
-        padding: calc(27rem/2) 0;
+        padding: calc(27rem / 2) 0;
 
         &::before {
             content: '';
             @extend %absolute;
-            top: 0;
-            left: 0;
+            @include transform-position(0, null, null, 0);
             @include size(100%, 100%);
             @include background('ocean', no-repeat);
             z-index: -1;
@@ -95,9 +89,9 @@ $images: ('mountain' $second $second-circle), ('forest' $third white);
     }
 
     &-details {
-        background-color: white;
         @include size(100%, auto);
         @include flex($direction: column);
+        background-color: white;
         overflow: hidden;
 
         &-title {
@@ -121,12 +115,12 @@ $images: ('mountain' $second $second-circle), ('forest' $third white);
             @include size(100%, auto);
 
             span {
+                @include size(100%, auto);
+                @include font($size: 1.6rem, $weight: 400);
                 display: inline-block;
                 color: $detail-text-color;
                 padding: 1.5rem 0;
-                @include size(100%, auto);
                 text-align: center;
-                @include font($size: 1.6rem, $weight: 400);
 
                 &:nth-child(odd) {
                     background-color: $detail-bg-color;
