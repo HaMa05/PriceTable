@@ -3,7 +3,6 @@
     margin: 5rem 0;
     padding: 0.8rem 3.5rem;
     transition: all 0.2s linear;
-    @extend %cursor;
 
     &:hover {
         background-color: currentColor;
@@ -16,11 +15,10 @@
     span {
         display: inline-block;
         text-transform: uppercase;
-        @include font($size: 1.9rem, $weight: 200);
     }
 
     &-blue {
-        color: $primary;
+        color: $first-color;
     }
 
     &-line {

@@ -1,0 +1,10 @@
+$positions: (
+    relative absolute fixed
+);
+
+@each $item in $positions {
+    .#{$item} {
+        position: $item
+    }
+}
+

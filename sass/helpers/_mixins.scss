@@ -9,7 +9,7 @@
 @mixin size($width: 1rem, $height: 1rem) {
     width: $width;
     height: $height;
-}
+};
 
 @mixin font($size: 1.4rem, $weight: normal, $family: 'Source Code Pro') {
     font : {
@@ -17,35 +17,47 @@
         weight: $weight;
     }
 
-    @if($family == 'Montserrat') {
+    @if ($family == 'Montserrat') {
         font-family: $family;
     }
-}
+};
 
 @mixin background($image: '', $repeat: repeat, $position: center, $size: cover) {
     background : {
-        image: url("../images/#{$image}.png");
+        image: url('../images/#{$image}.png');
         repeat: $repeat;
         position: $position;
         size: $size;
     }
-}
+};
 
-@mixin transform-position($top: null, $right: null, $bottom: null, $left: null) {
-    @if($top) {
-        top: $top;
+$font-size: (
+    '12': 1.2,
+    '14': 1.4,
+    '16': 1.6,
+    '18': 1.8,
+    '20': 2,
+    '24': 2.4,
+    '30': 3,
+    '40': 4,
+    '60': 6,
+    '70': 7,
+    '80': 8,
+    '90': 9,
+);
+
+$font-weight: (
+    normal bold 200 400 300 700
+);
+
+@each $key, $value in $font-size {
+    .text-#{$key} {
+        font-size: #{$value}rem;
     }
+};
 
-    @if($right) {
-        right: $right;
+@each $value in $font-weight {
+    .font-#{$value} {
+        font-weight: #{$value};
     }
-
-    @if($bottom) {
-        bottom: $bottom;
-    }
-
-    @if($left) {
-        left: $left;
-    }
-}
-
+};

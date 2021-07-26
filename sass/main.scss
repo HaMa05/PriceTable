@@ -2,7 +2,8 @@
 
 @import 'helpers/mixins';
 @import 'helpers/variables';
-@import 'helpers/placeholder';
+@import 'helpers/position';
+@import 'helpers/mouse';
 
 //components
 @import 'components/base';
@@ -16,7 +17,6 @@
     max-width: 36.2rem;
     margin-top: 8rem;
     width: 100%;
-    @extend %relative;
     &:not(:last-child) {
         margin-right: 4rem;
     }
@@ -24,8 +24,8 @@
     &-circle {
         @include size(12rem, 12rem);
         @include flex($justify: center, $direction: column);
-        @extend %absolute;
-        @include transform-position(-6rem, null, null, 50%);
+        top: -6rem;
+        left: 50%;
         border-radius: 50%;
         background-color: white;
         transform: translateX(-50%);
@@ -33,33 +33,32 @@
     }
 
     &-per {
-        @include font(1.6rem);
         color: $sm-color;
     }
 
     &-count {
-        color: $primary;
+        color: $first-color;
         margin-bottom: 0.5rem;
-        @include font(3rem);
     }
 
     &-new {
         @include size(7rem, 7rem);
-        @extend %absolute;
-        @include transform-position(-1.5rem, null, null, -1.5rem);
         @include flex($justify: center);
+        top: -1.5rem;
+        left: -1.5rem;
 
         &::before {
             content: '';
-            @extend %absolute;
-            @include transform-position(0, null, null, 0);
+            position: absolute;
             @include size(100%, 100%);
             @include background('newmark');
+            top: 0;
+            left: 0;
             z-index: 2;
         }
 
         span {
-            @include font(1.3rem, bold, 'Montserrat');
+            font-family: 'Montserrat';
             text-transform: uppercase;
             color: white;
             z-index: 4;
@@ -68,7 +67,6 @@
 
     &-background {
         @include size(100%, auto);
-        @extend %relative;
         @include flex(center, $direction: column);
         max-height: 27rem;
         color: white;
@@ -76,15 +74,16 @@
 
         &::before {
             content: '';
-            @extend %absolute;
-            @include transform-position(0, null, null, 0);
+            position: absolute;
             @include size(100%, 100%);
             @include background('ocean', no-repeat);
+            top: 0;
+            left: 0;
             z-index: -1;
         }
 
         &-title {
-            @include font(4rem, 200, 'Montserrat');
+            font-family: 'Montserrat';
         }
     }
 
@@ -99,13 +98,11 @@
             padding: 2.5rem 0;
 
             .lg-title {
-                @include font($size: 2.4rem);
                 color: $lg-color;
                 padding-bottom: 0.2rem;
             }
 
             .sm-title {
-                @include font($size: 1.4rem, $weight: 400);
                 color: $sm-color;
             }
         }
@@ -116,7 +113,6 @@
 
             span {
                 @include size(100%, auto);
-                @include font($size: 1.6rem, $weight: 400);
                 display: inline-block;
                 color: $detail-text-color;
                 padding: 1.5rem 0;
