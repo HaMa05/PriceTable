@@ -11,17 +11,6 @@
     height: $height;
 };
 
-@mixin font($size: 1.4rem, $weight: normal, $family: 'Source Code Pro') {
-    font : {
-        size: $size;
-        weight: $weight;
-    }
-
-    @if ($family == 'Montserrat') {
-        font-family: $family;
-    }
-};
-
 @mixin background($image: '', $repeat: repeat, $position: center, $size: cover) {
     background : {
         image: url('../images/#{$image}.png');
