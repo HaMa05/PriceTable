@@ -4,90 +4,94 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./sass/main.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <title>PriceTable</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./sass/style.css" />
+        <title>Price Table</title>
     </head>
-
     <body>
-        <div class="container">
-            <div class="price relative">
-                <div class="price-circle absolute">
-                    <h3 class="price-count text-30 font-normal">$399</h3>
-                    <span class="price-per text-16">Per tour</span>
-                </div>
-                <div class="price-background overlay relative">
-                    <h1 class="text-12 price-background-title text-40 font-200">OCEAN</h1>
-                </div>
-                <div class="price-details">
-                    <div class="price-details-title">
-                        <h3 class="lg-title text-24 font-normal">Subtitle goes here</h3>
-                        <span class="sm-title text-14 font-400 normal">Subtitle second line goes here lorem ipsum*</span>
+        <div class="container-fluid no-gutters">
+            <div class="row flex-sm-column flex-md-row justify-content-center align-items-center no-gutters pt-5 mt-4">
+                <div class="price position-relative d-flex flex-column align-items-center no-gutters mt-5">
+                    <div class="price-circle position-absolute rounded-circle d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="price-count text-30 font-normal">$399</h3>
+                        <span class="price-per text-16">Per tour</span>
                     </div>
-                    <div class="price-details-text">
-                        <span class="text-16 font-400">Drop out ramen hustle</span>
-                        <span class="text-16 font-400">Coworking viral landing</span>
-                        <span class="text-16 font-400">Crush revenue traction</span>
-                        <span class="text-16 font-400">User base minimum viable</span>
-                        <span class="text-16 font-400">Lorem ipsum dolor</span>
+                    <div class="price-background overlay position-relative w-100">
+                        <h1 class="price-background-title text-center text-white text-40 font-200 h-100">OCEAN</h1>
                     </div>
-                    <div class="btn btn-line btn-blue cursor">
-                        <span class="text-18 font-200">Buy tour</span>
-                    </div>
-                </div>
-            </div>
-            <div class="price relative">
-                <div class="price-circle absolute">
-                    <h3 class="price-count text-30 font-normal">$499</h3>
-                    <span class="price-per text-16">Per tour</span>
-                </div>
-                <div class="price-new absolute">
-                    <span class="font-bold text-12">new</span>
-                </div>
-                <div class="price-background overlay relative">
-                    <h1 class="price-background-title text-40 font-200">MOUNTAINS</h1>
-                    <span class="price-background-text">The best price/quality plan*</span>
-                </div>
-                <div class="price-details">
-                    <div class="price-details-title">
-                        <h3 class="lg-title text-24 font-normal">Subtitle goes here</h3>
-                        <span class="sm-title text-14 font-400 normal">Subtitle second line goes here lorem ipsum*</span>
-                    </div>
-                    <div class="price-details-text">
-                        <span class="text-16 font-400">Drop out ramen hustle</span>
-                        <span class="text-16 font-400">Coworking viral landing</span>
-                        <span class="text-16 font-400">Crush revenue traction</span>
-                        <span class="text-16 font-400">User base minimum viable</span>
-                        <span class="text-16 font-400">Lorem ipsum dolor</span>
-                    </div>
-                    <div class="btn btn-line btn-blue cursor">
-                        <span class="text-18 font-200">Buy tour</span>
+                    <div class="row price-details flex-column w-100 h-auto overflow-hidden no-gutters justify-content-center bg-white">
+                        <div class="price-details-title d-flex flex-column align-items-center justify-content-center py-4">
+                            <h3 class="lg-title text-24 pb-3">Subtitle goes here</h3>
+                            <span class="sm-title text-14">Subtitle second line goes here lorem ipsum*</span>
+                        </div>
+                        <div class="price-details-text flex-column w-100 h-auto progress bg-white">
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Drop out ramen hustle</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Coworking viral landing</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Crush revenue traction</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">User base minimum viable</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Lorem ipsum dolor</span>
+                        </div>
+                        <div class="btn btn-line cursor w-50 px-4 py-2 m-5 text-uppercase align-self-center">
+                            <span class="text-24 font-200">Buy tour</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="price relative">
-                <div class="price-circle absolute">
-                    <h3 class="price-count text-30 font-normal">$599</h3>
-                    <span class="price-per text-16">Per tour</span>
-                </div>
-                <div class="price-background relative">
-                    <h1 class="price-background-title text-40 font-200">FOREST</h1>
-                </div>
-                <div class="price-details">
-                    <div class="price-details-title">
-                        <h3 class="lg-title text-24 font-normal">Subtitle goes here</h3>
-                        <span class="sm-title text-14 font-400 normal">Subtitle second line goes here lorem ipsum*</span>
+                <div class="price position-relative d-flex flex-column align-items-center no-gutters mt-5">
+                    <div class="price-circle position-absolute rounded-circle d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="price-count text-30 font-normal">$399</h3>
+                        <span class="price-per text-16">Per tour</span>
                     </div>
-                    <div class="price-details-text">
-                        <span class="text-16 font-400">Drop out ramen hustle</span>
-                        <span class="text-16 font-400">Coworking viral landing</span>
-                        <span class="text-16 font-400">Crush revenue traction</span>
-                        <span class="text-16 font-400">User base minimum viable</span>
-                        <span class="text-16 font-400">Lorem ipsum dolor</span>
+                    <div class="price-new d-flex position-absolute overflow-hidden justify-content-center align-items-center">
+                        <span class="font-bold text-12 text-white text-uppercase">new</span>
                     </div>
-                    <div class="btn btn-line btn-blue cursor">
-                        <span class="text-18 font-200">Buy tour</span>
+                    <div class="price-background overlay position-relative w-100">
+                        <h1 class="price-background-title text-center text-white text-40 font-200 h-100">OCEAN</h1>
+                    </div>
+                    <div class="row price-details flex-column w-100 h-auto overflow-hidden no-gutters justify-content-center bg-white">
+                        <div class="price-details-title d-flex flex-column align-items-center justify-content-center py-4">
+                            <h3 class="lg-title text-24 pb-3">Subtitle goes here</h3>
+                            <span class="sm-title text-14">Subtitle second line goes here lorem ipsum*</span>
+                        </div>
+                        <div class="price-details-text flex-column w-100 h-auto progress bg-white">
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Drop out ramen hustle</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Coworking viral landing</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Crush revenue traction</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">User base minimum viable</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Lorem ipsum dolor</span>
+                        </div>
+                        <div class="btn btn-line cursor w-50 px-4 py-2 m-5 text-uppercase align-self-center">
+                            <span class="text-24 font-200">Buy tour</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="price position-relative d-flex flex-column align-items-center no-gutters mt-5">
+                    <div class="price-circle position-absolute rounded-circle d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="price-count text-30 font-normal">$599</h3>
+                        <span class="price-per text-16">Per tour</span>
+                    </div>
+                    <div class="price-background overlay position-relative w-100">
+                        <h1 class="price-background-title text-center text-white text-40 font-200 h-100">FOREST</h1>
+                    </div>
+                    <div class="row price-details flex-column w-100 h-auto overflow-hidden no-gutters justify-content-center bg-white">
+                        <div class="price-details-title d-flex flex-column align-items-center justify-content-center py-4">
+                            <h3 class="lg-title text-24 pb-3">Subtitle goes here</h3>
+                            <span class="sm-title text-14">Subtitle second line goes here lorem ipsum*</span>
+                        </div>
+                        <div class="price-details-text flex-column w-100 h-auto progress bg-white">
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Drop out ramen hustle</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Coworking viral landing</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Crush revenue traction</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">User base minimum viable</span>
+                            <span class="py-4 px-0 text-16 font-400 w-100 h-auto text-center d-inline-block">Lorem ipsum dolor</span>
+                        </div>
+                        <div class="btn btn-line cursor w-50 px-4 py-2 m-5 text-uppercase align-self-center">
+                            <span class="text-24 font-200">Buy tour</span>
+                        </div>
                     </div>
                 </div>
             </div>

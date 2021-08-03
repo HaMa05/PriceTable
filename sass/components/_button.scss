@@ -2,7 +2,7 @@
     @include flex($justify: center);
     margin: 5rem 0;
     padding: 0.8rem 3.5rem;
-    transition: all 0.2s linear;
+    transition: all 0.2s linear; 
 
     &:hover {
         background-color: currentColor;

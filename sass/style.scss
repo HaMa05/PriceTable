@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&family=Source+Sans+Pro:wght@300;400&display=swap');
+
+@import './configs/nomalize.scss';
+@import './configs/reset.scss';
+@import './helpers/mixins';
+@import './helpers/variables';
+@import './helpers/fonts';
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*='col-'] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.overlay {
+    background-color: rgba(44, 46, 61, 0.5);
+}
+
+.price {
+    width: 22.5rem !important;
+    &-circle {
+        @include size(7.5rem, 7.5rem);
+        top: calc(-7.5rem / 2);
+        z-index: 3;
+    }
+
+    &-new {
+        @include size(3.75rem, 3.75rem);
+        z-index: 5;
+        top: calc(-3.75rem / 4);
+        left: calc(-3.75rem / 4);
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            @include size(100%, 100%);
+            @include background('newmark');
+        }
+
+        span {
+            font-family: 'Montserrat';
+        }
+    }
+
+    &-background {
+        max-height: 17rem;
+        padding: 7.2rem 0;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%, 100%);
+            z-index: -1;
+        }
+
+        &-title {
+            font-family: 'Montserrat';
+        }
+    }
+
+    &-details {
+        &-title {
+            padding: 2.5rem 0;
+
+            .lg-title {
+                color: $lg-color;
+                padding-bottom: 0.2rem;
+            }
+
+            .sm-title {
+                color: $sm-color;
+            }
+        }
+
+        &-text {
+            span {
+                color: $detail-text-color;
+
+                &:nth-child(odd) {
+                    background-color: $detail-bg-color;
+                }
+            }
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+
+    @each $image, $color, $back in $images {
+        $index: index($images, ($image $color $back));
+        &:nth-child(#{$index}) {
+            .price-background::before {
+                @include background($image, no-repeat);
+            }
+
+            .price-circle {
+                background-color: $back;
+            }
+
+            .price-count,
+            .price-per,
+            .btn-line {
+                color: $color;
+            }
+
+            .btn-line {
+                border: 1px solid currentColor;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.btn {
+    span {
+        font-family: 'Montserrat';
+    }
+
+    &:hover {
+        background-color: currentColor;
+
+        span {
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 796px) {
+    .price:not(:last-child) {
+        margin-right: 0;
+    }
+}
